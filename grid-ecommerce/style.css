@@ -1,0 +1,117 @@
+* {
+  font-size: 32px;
+}
+body {
+}
+.wrapper {
+  min-height: 50vh;
+  /* grid  */
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto;
+
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-areas:
+    " header header header"
+    " title title title"
+    "banner banner bb1 "
+    "banner banner bb2"
+    "side-menu main main"
+    "tags main main"
+    "recent main main"
+    "footer footer footer";
+}
+.wrapper > * {
+  min-height: 50px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.header {
+  background: yellow;
+  color: navy;
+  grid-area: header;
+}
+.title {
+  background: blue;
+  grid-area: title;
+}
+.banner {
+  background: blueviolet;
+  grid-area: banner;
+}
+.bb1 {
+  background: coral;
+  grid-area: bb1;
+}
+.bb2 {
+  background: crimson;
+  grid-area: bb2;
+}
+.side-menu {
+  background: darkmagenta;
+  grid-area: side-menu;
+}
+.tags {
+  background: darkslateblue;
+  grid-area: tags;
+}
+.recent {
+  background: firebrick;
+  grid-area: recent;
+}
+.main {
+  background: fuchsia;
+  grid-area: main;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.main > div {
+  padding: 4rem;
+  background: #000;
+  margin: 5px;
+  flex: 1;
+}
+.footer {
+  background: black;
+  color: white;
+  grid-area: footer;
+}
+
+/* ipad  */
+@media (max-width: 768px) {
+  .wrapper {
+    display: grid;
+    gap: 10px;
+
+    grid-template-areas:
+      "header header"
+      "title title"
+      "banner banner"
+      "bb1 bb2"
+      "main main"
+      "side-menu tags"
+      "recent recent"
+      "footer footer";
+  }
+}
+@media (max-width: 576px) {
+  .wrapper {
+    display: grid;
+    gap: 10px;
+
+    grid-template-areas:
+      "header"
+      "title "
+      "banner"
+      "bb1"
+      "bb2"
+      "main"
+      "side-menu"
+      "tags"
+      "recent"
+      "footer";
+  }
+}
